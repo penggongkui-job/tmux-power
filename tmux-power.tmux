@@ -107,11 +107,11 @@ tmux_set status-left-bg "$G04"
 tmux_set status-left-fg "$G12"
 tmux_set status-left-length 150
 user=$(whoami)
-LS="#[fg=#{?client_prefix,$BG,$TC},bg=#{?client_prefix,$TC,$G06}] $session_icon #S "
+LS="#[fg=#{?client_prefix,$BG,$TC},bg=#{?client_prefix,$TC,blue},bold] $session_icon #S "
 if "$show_upload_speed"; then
     LS="$LS#[fg=$G06,bg=$G05]$rarrow#[fg=$TC,bg=$G05] $upload_speed_icon #{upload_speed} #[fg=$G05,bg=$BG]$rarrow"
 else
-    LS="$LS#[fg=#{?client_prefix,$TC,$G06},bg=$BG]$rarrow"
+    LS="$LS#[fg=#{?client_prefix,$TC,blue},bg=$BG]$rarrow"
 fi
 if [[ $prefix_highlight_pos == 'L' || $prefix_highlight_pos == 'LR' ]]; then
     LS="$LS#{prefix_highlight}"
